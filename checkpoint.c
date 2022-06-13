@@ -5,7 +5,9 @@
 */
 #include <stdio.h>
 #include "signalHandler.c"
-//#include "memory.c"
+#include "memory.c"
 //#include "context.c""
 
-
+int init_chkpnt(char filename[100]){
+    init_proc_maps(filename);
+}

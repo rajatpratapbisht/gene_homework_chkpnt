@@ -7,10 +7,9 @@
 #include <stdio.h>
 #include "checkpoint.c"
 
-int main() {
+int main(int argc, char *argv[]) {
 
     long int count = 0;
-
     if (signal(SIGINT, sigHandler) == SIG_ERR){
         printf ( "SIGNAL ERROR FOUND \n" );
     }
@@ -20,6 +19,7 @@ int main() {
 
         if (sigEncounter){
             printf ( "\nStarting checkpointing sequence...\n\n" );
+            init_chkpnt(argv[0]);
             return 1;
         }
 
